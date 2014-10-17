@@ -1,16 +1,48 @@
 package com.medialab.foodtogo;
 
-import android.support.v7.app.ActionBarActivity;
+import com.medialab.foodtogo.adapter.ListPostsAdapter;
+
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class ListPostsActivity extends ActionBarActivity {
+public class ListPostsActivity extends ListActivity {
+	
+	static final String[] PRODUCTS = new String[] { "Apple", "Avocado", "Banana",
+		"Blueberry", "Coconut", "Durian", "Guava", "Kiwifruit",
+		"Jackfruit", "Mango", "Olive", "Pear", "Sugar-apple" };
+	
+	static final String[] WEIGHT = new String[] { "23KG", "100KG", "120KG",
+		"80KG", "30KG", "20KG", "55KG", "92KG",
+		"28KG", "47KG", "12KG", "32KG", "65KG" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_list_posts);
+		//setContentView(R.layout.activity_list_posts);
+		//setListAdapter(new ArrayAdapter<String>(this, R.layout.activity_list_posts,FRUITS));
+		setListAdapter(new ListPostsAdapter(this, PRODUCTS)); 
+		
+		ListView listView = getListView();
+		listView.setTextFilterEnabled(true);
+ 
+		listView.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+			    // When clicked, show a toast with the TextView text
+			    Toast.makeText(getApplicationContext(),
+				((TextView) view).getText(), Toast.LENGTH_SHORT).show();
+			}
+		});
+		
 	}
 
 	@Override

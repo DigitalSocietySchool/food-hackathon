@@ -41,7 +41,7 @@ public class MainActivity extends ActionBarActivity {
 	public void startApp(View view) {
 		System.out.println("en start App");
 		String message = "Product available";
-		Intent intent = new Intent(this, TestActivity.class);
+		Intent intent = new Intent(this, ListPostsActivity.class);
 		intent.putExtra(EXTRA_LIST_POST, message);
 		startActivity(intent);
 	}
