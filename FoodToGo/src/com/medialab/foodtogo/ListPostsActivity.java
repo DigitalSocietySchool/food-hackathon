@@ -1,66 +1,44 @@
 package com.medialab.foodtogo;
 
-import com.medialab.foodtogo.adapter.ListPostsAdapter;
-
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.medialab.foodtogo.adapter.ListPostsAdapter;
 
 public class ListPostsActivity extends ListActivity {
 	
 	static final String[] PRODUCTS = new String[] { "Apple", "Avocado", "Banana",
-		"Blueberry", "Coconut", "Durian", "Guava", "Kiwifruit",
-		"Jackfruit", "Mango", "Olive", "Pear", "Sugar-apple" };
+		"Blueberry", "Coconut", "Durian", "Guava", "Kiwifruit" };
 	
 	static final String[] WEIGHT = new String[] { "23KG", "100KG", "120KG",
-		"80KG", "30KG", "20KG", "55KG", "92KG",
-		"28KG", "47KG", "12KG", "32KG", "65KG" };
+		"80KG", "30KG", "20KG", "55KG", "92KG"};
+	
+	static final String[] FARMERS = new String[] { "Cascina del Nono", "Potato Farm", "Old MacDonald",
+		"Tom y Jerry", "HillyBillies", "El granjero", "Gallo Claudio", "Otro" };
+	
+	static final String[] ADDRESSES = new String[] { "Via de la Hout", "Haarlemerstraat 12, 2312LE Eindhoven", "Haarlemerstraat 12, 2312LE Eindhoven",
+		"Haarlemerstraat 12, 2312LE Eindhoven", "Haarlemerstraat 12, 2312LE Eindhoven", "Haarlemerstraat 12, 2312LE Eindhoven", "Haarlemerstraat 12, 2312LE Eindhoven", "Haarlemerstraat 12, 2312LE Eindhoven" };
+	
+	static final String[] DATES = new String[] { "October 23", "October 23", "October 23",
+		"October 23", "October 23", "October 23", "October 23", "October 23"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//setContentView(R.layout.activity_list_posts);
-		//setListAdapter(new ArrayAdapter<String>(this, R.layout.activity_list_posts,FRUITS));
-		setListAdapter(new ListPostsAdapter(this, PRODUCTS)); 
+		setListAdapter(new ListPostsAdapter(this, PRODUCTS, WEIGHT, FARMERS, ADDRESSES, DATES)); 
 		
-		ListView listView = getListView();
-		listView.setTextFilterEnabled(true);
+	}
+
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
  
-		listView.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-			    // When clicked, show a toast with the TextView text
-			    Toast.makeText(getApplicationContext(),
-				((TextView) view).getText(), Toast.LENGTH_SHORT).show();
-			}
-		});
-		
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.list_posts, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
+		//get selected items
+		String selectedValue = (String) getListAdapter().getItem(position);
+		System.out.println("selectedValue  " + selectedValue);
+		Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
+ 
 	}
 }
