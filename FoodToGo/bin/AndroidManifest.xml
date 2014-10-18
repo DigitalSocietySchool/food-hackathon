@@ -24,7 +24,8 @@
         </activity>
         <activity
             android:name=".ListPostsActivity"
-            android:label="@string/title_activity_list_posts" >
+            android:theme="@style/FoodToGoTheme"
+            android:label="">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.medialab.foodtogo.MainActivity" />

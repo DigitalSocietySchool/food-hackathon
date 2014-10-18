@@ -1078,13 +1078,15 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int apples=0x7f020057;
-        public static final int background=0x7f020058;
-        public static final int carrots=0x7f020059;
-        public static final int ic_launcher=0x7f02005a;
-        public static final int mushrooms=0x7f02005b;
-        public static final int potatoes=0x7f02005c;
-        public static final int tomatoes=0x7f02005d;
+        public static final int app_logo=0x7f020057;
+        public static final int apples=0x7f020058;
+        public static final int background=0x7f020059;
+        public static final int carrots=0x7f02005a;
+        public static final int header=0x7f02005b;
+        public static final int ic_launcher=0x7f02005c;
+        public static final int mushrooms=0x7f02005d;
+        public static final int potatoes=0x7f02005e;
+        public static final int tomatoes=0x7f02005f;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1098,15 +1100,15 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050045;
+        public static final int action_settings=0x7f050044;
         public static final int activity_chooser_view_content=0x7f050025;
-        public static final int address=0x7f050042;
+        public static final int address=0x7f050041;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
-        public static final int button1=0x7f050044;
+        public static final int button1=0x7f050043;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
-        public static final int date=0x7f050043;
+        public static final int date=0x7f050042;
         public static final int default_activity_button=0x7f050028;
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
@@ -1114,9 +1116,8 @@ containing a value of this type.
         public static final int edit_query=0x7f050030;
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
-        public static final int expandableListView1=0x7f050040;
         public static final int expanded_menu=0x7f05002c;
-        public static final int farmer=0x7f050041;
+        public static final int farmer=0x7f050040;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int icon=0x7f05002a;
@@ -1297,6 +1298,12 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0b008c;
+        /**  ActionBar styles 
+         */
+        public static final int FoodToGoActionBar=0x7f0b008e;
+        /**  the theme applied to the application or activity 
+         */
+        public static final int FoodToGoTheme=0x7f0b008d;
         /**  Mimic text appearance in select_dialog_item.xml 
          */
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0b0063;
