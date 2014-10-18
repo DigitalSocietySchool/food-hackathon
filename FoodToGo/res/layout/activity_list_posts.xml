@@ -50,13 +50,6 @@
         android:textColor="@color/label_product"
         android:textSize="12sp" />
 
-    <ExpandableListView
-        android:id="@+id/expandableListView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/weight"
-        android:layout_marginTop="68dp" >
-
         <TextView
             android:id="@+id/farmer"
             android:layout_width="fill_parent"
@@ -87,6 +80,5 @@
             android:text="@+id/date"
             android:textColor="@color/label_product"
             android:textSize="12sp" />
-    </ExpandableListView>
 
 </RelativeLayout>
